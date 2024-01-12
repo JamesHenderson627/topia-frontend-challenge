@@ -24,7 +24,10 @@ export default function listUsersInView(
         is_broadcaster: isInsideViewport
       };
     })
-    .filter((user) => user.is_broadcaster);
+    .filter((user) => user.is_broadcaster)
+    .sort(
+      (userA, userB) => userA.distanceFromCenter - userB.distanceFromCenter
+    );
 
   // END SOLUTION SECTION
 
